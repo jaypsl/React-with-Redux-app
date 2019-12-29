@@ -4,13 +4,14 @@ import ListImages from "./components/ListImages";
 import { connect } from "react-redux";
 import { getAllImages, uploadImage } from "./actions/action";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 import "./index.css";
 
 class App extends Component {
   state = {
     selectedImage: {},
     header: "Technical Exercise",
-    footer: "Build By: Jay Solanki",
+    footer: "Built By: Jay Solanki",
     pictures: []
   };
 
@@ -36,7 +37,7 @@ class App extends Component {
     const { selectedImage, header, footer } = this.state;
     return (
       <div>
-        <Footer text={header} />
+        <Header text={header} />
         <div className="main">
           <ListImages
             imageList={imageList}
