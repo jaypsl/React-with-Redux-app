@@ -1,10 +1,9 @@
 import React from "react";
-import { LOCAL_API_END_POINT } from "../constants/constants";
 
 const PreviewImage = props => {
-  const imageURL = props.selectedImage.local
-    ? `${LOCAL_API_END_POINT}/${props.selectedImage.download_url}`
-    : `${props.selectedImage.download_url}.jpg`;
+  const imageURL = props.selectedImage.download_url
+    ? props.selectedImage.download_url
+    : props.selectedImage.uploadImage_url;
   return (
     <div className="image-preview-section">
       <div className="image-preview">

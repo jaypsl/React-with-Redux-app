@@ -11,8 +11,7 @@ class App extends Component {
   state = {
     selectedImage: {},
     header: "Technical Exercise",
-    footer: "Built By: Jay Solanki",
-    pictures: []
+    footer: "Built By: Jay Solanki"
   };
 
   componentDidMount() {
@@ -23,12 +22,11 @@ class App extends Component {
     this.setState({ selectedImage: image });
   };
   onDrop = e => {
-    const files = Array.from(e.target.files);
+    const files = e.target.files;
 
     const formData = new FormData();
-    files.forEach((file, i) => {
-      formData.append(i, file);
-    });
+    formData.append("file", files[0]);
+    formData.append("upload_preset", "jaypsl");
     this.props.uploadImage(formData);
   };
 
